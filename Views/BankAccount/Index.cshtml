@@ -1,0 +1,20 @@
+﻿@model ICollection<MoneyTransferApplication.ViewModel.BankAccount.GetBankAccountVM>
+<h2>Bank Accounts</h2>
+<table class="table">
+    <tr>
+        <th>Bank Name</th>
+        <th>Account Holder</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BankName</td>
+            <td>@item.AccountHolderName</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
